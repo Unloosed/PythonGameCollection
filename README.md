@@ -37,8 +37,9 @@ python main.py
 
 - `main_TEXT.py`: The main script that launches the game menu in an interactable **text-based format**.
 - `main_GUI.py`: The main script that launches the game menu in an interactuable **GUI**.
-- `house_escape.py`: Contains the logic for the House Escape game.
-- `snake.py`: Contains the logic for the Snake game.
+- `games/`: Directory containing all game-specific files.
+    - `house_escape.py`: Contains the logic for the House Escape game.
+    - `snake.py`: Contains the logic for the Snake game.
 - `requirements.txt`: Lists the dependencies required for the project.
 
 ## Contributing
