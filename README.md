@@ -31,3 +31,24 @@ This project is a simple game menu built using Python's Tkinter library. It allo
 Run the main script to start the game menu:
 ```bash
 python main.py
+```
+
+## Project Structure
+
+- `main_TEXT.py`: The main script that launches the game menu in an interactable **text-based format**.
+- `main_GUI.py`: The main script that launches the game menu in an interactuable **GUI**.
+- `house_escape.py`: Contains the logic for the House Escape game.
+- `snake.py`: Contains the logic for the Snake game.
+- `requirements.txt`: Lists the dependencies required for the project.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/Unloosed/PythonGameCollection/blob/master/LICENSE.txt) file for details.
+
+## Acknowledgements
+
+Thanks to the developers of the Tkinter library for making GUI development in Python straightforward.
