@@ -11,7 +11,7 @@ This project is a simple game menu built using Python's Tkinter library. It allo
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/your-repo-name.git
+    git clone https://github.com/Unloosed/PythonGameCollection.git
     cd your-repo-name
     ```
 
