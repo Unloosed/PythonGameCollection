@@ -1,5 +1,5 @@
-import house_escape
-import snake
+from games import house_escape, snake
+
 
 def main_menu():
     games = {
