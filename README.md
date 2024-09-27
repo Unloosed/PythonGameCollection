@@ -17,8 +17,8 @@ This project is a simple game menu built using Python's Tkinter library. It allo
 
 2. **Create a virtual environment** (optional but recommended):
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    python -m venv myenv
+    source myenv/bin/activate  # On Windows use `myenv\Scripts\activate`
     ```
 
 3. **Install the dependencies**:
