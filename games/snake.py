@@ -85,11 +85,11 @@ def game_loop():
                     x1_change = snake_block
                     y1_change = 0
                 elif event.key == pygame.K_UP:
+                    x1_change = 0
                     y1_change = -snake_block
-                    x1_change = 0
                 elif event.key == pygame.K_DOWN:
-                    y1_change = snake_block
                     x1_change = 0
+                    y1_change = snake_block
 
         if x1 >= width or x1 < 0 or y1 >= height or y1 < 0:
             game_close = True
