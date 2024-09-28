@@ -2,10 +2,11 @@ import os
 import tkinter as tk
 import importlib
 
-def start_game(game_func):
+def start_game(game_func) -> None:
+    """Execute a reference to a function"""
     game_func()
 
-def is_valid_game_file(filename):
+def is_valid_game_file(filename) -> bool:
     """Check if the file is a valid game file."""
     return filename.endswith('.py') and filename != '__init__.py'
 
@@ -22,6 +23,12 @@ def get_start_function(module, filename):
     return None
 
 def get_games():
+    """
+    Scan the 'games' directory for Python files, import them, and check for a start function.
+
+    Returns:
+        dict: A dictionary where the keys are the game names (formatted nicely) and the values are the corresponding start functions.
+    """
     games = {}
     games_dir = 'games'
     for filename in os.listdir(games_dir):
@@ -34,6 +41,11 @@ def get_games():
     return games
 
 def main_menu():
+    """
+    Create the main menu GUI for launching games.
+
+    This function initializes the main window, loads the available games, and creates buttons for each game.
+    """
     games = get_games()
 
     root = tk.Tk()
