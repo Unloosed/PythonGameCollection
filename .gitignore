@@ -113,3 +113,6 @@ dmypy.json
 
 # Pycharm
 .idea/
+
+# Project folders
+saves/
