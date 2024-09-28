@@ -30,7 +30,7 @@ This project is a simple game menu built using Python's Tkinter library. It allo
 
 Run the main script to start the game menu:
 ```bash
-python main.py
+python main_GUI.py
 ```
 
 ## Project Structure
