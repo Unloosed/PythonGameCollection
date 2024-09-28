@@ -1,7 +1,6 @@
 import tkinter as tk
 from games import house_escape, snake
 
-
 def start_game(game_func):
     game_func()
 
