@@ -59,11 +59,13 @@ def game_loop():
     snake_list = []
     length_of_snake = 1
 
+    game_over_message = "You Lost! Press Q-Quit or C-Play Again"
+
     while not game_over:
 
         while game_close:
             win.fill(colors["blue"])
-            message(win, font_style, "You Lost! Press Q-Quit or C-Play Again", colors["red"], width, height)
+            message(win, font_style, game_over_message, colors["red"], width, height)
             pygame.display.update()
 
             for event in pygame.event.get():
