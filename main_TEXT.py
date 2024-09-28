@@ -1,6 +1,5 @@
 from games import house_escape, snake
 
-
 def main_menu():
     games = {
         "House Escape": house_escape.start_house_escape,
@@ -16,14 +15,14 @@ def main_menu():
         choice = input("Enter your choice: ")
 
         if choice.isdigit() and 1 <= int(choice) <= len(games):
-            game_name = list(games.keys())[int(choice) - 1]
+            index = int(choice) - 1
+            game_name = list(games.keys())[index]
             games[game_name]()
         elif choice == str(len(games) + 1):
             print("Exiting the game. Goodbye!")
             break
         else:
             print("Invalid choice. Please select again.")
-
 
 if __name__ == "__main__":
     main_menu()
