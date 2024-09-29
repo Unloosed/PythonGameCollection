@@ -14,7 +14,7 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
 # Path to resource directory
-RESOURCE_PATH = "../resources/pollen_collector/"
+RESOURCE_PATH = "resources/pollen_collector/"
 
 # Load images
 bee_image = pygame.image.load(RESOURCE_PATH+"bee.png")
@@ -167,9 +167,27 @@ class Obstacle:
     def draw(self, screen):
         screen.blit(self.image, self.rect.topleft)
 
+def local_run_redefine_resources_paths():
+    global bee_image, pollen_image, raindrop_image, background_image
+    # Path to resource directory
+    resource_path = "resources/pollen_collector/"
+
+    # Load images
+    bee_image = pygame.image.load(resource_path + "bee.png")
+    pollen_image = pygame.image.load(resource_path + "pollen.png")
+    raindrop_image = pygame.image.load(resource_path + "raindrop.png")
+    background_image = pygame.image.load(resource_path + "rainy_background.png")
+
+    # Scale images
+    bee_image = pygame.transform.scale(bee_image, (50, 50))
+    pollen_image = pygame.transform.scale(pollen_image, (30, 30))
+    raindrop_image = pygame.transform.scale(raindrop_image, (20, 50))
+    background_image = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
+
 def start_pollen_collector():
     game = Game()
     game.run()
 
 if __name__ == "__main__":
+    local_run_redefine_resources_paths()
     start_pollen_collector()
