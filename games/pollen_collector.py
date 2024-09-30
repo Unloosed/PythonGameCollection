@@ -241,13 +241,13 @@ class PowerUp:
         """Apply the effect of the power-up."""
         self.start_time = pygame.time.get_ticks()
         if self.type == "gust_of_wind":
-            game.player.speed *= 2
+            game.player.speed *= 1.5
             pygame.time.set_timer(pygame.USEREVENT + 1, self.duration)
         elif self.type == "honey":
             game.additional_time += 3  # Add 3 seconds to the additional time
         elif self.type == "focus":
             for obstacle in game.obstacles:
-                obstacle.speed /= 2
+                obstacle.speed /= 1.5
             pygame.time.set_timer(pygame.USEREVENT + 2, self.duration)
         elif self.type == "bounty":
             game.score += 1  # Double the score for the next pollen collected
