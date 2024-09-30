@@ -45,6 +45,7 @@ class Game:
         self.player = Player()
         self.collectible = Collectible()
         self.obstacles = [Obstacle() for _ in range(5)]
+        self.power_ups = []
 
     def run(self):
         while self.running:
@@ -65,8 +66,14 @@ class Game:
         self.player.move(keys)
         self.check_collision()
         self.update_timer()
+        self.spawn_power_up()
         for obstacle in self.obstacles:
             obstacle.move()
+        for power_up in self.power_ups:
+            power_up.move()
+            if self.player.rect.colliderect(power_up.rect):
+                power_up.apply_effect(self)
+                self.power_ups.remove(power_up)
 
     def check_collision(self):
         if self.player.rect.colliderect(self.collectible.rect):
@@ -85,12 +92,19 @@ class Game:
             self.running = False
             self.game_over()
 
+    def spawn_power_up(self):
+        if random.randint(1, 100) <= 2:  # 2% chance to spawn a power-up each frame
+            power_up_type = random.choice(["gust_of_wind", "honey", "focus", "bounty"])
+            self.power_ups.append(PowerUp(power_up_type))
+
     def draw(self):
         self.screen.blit(background_image, (0, 0))
         self.player.draw(self.screen)
         self.collectible.draw(self.screen)
         for obstacle in self.obstacles:
             obstacle.draw(self.screen)
+        for power_up in self.power_ups:
+            power_up.draw(self.screen)
         score_text = self.font.render("Score: " + str(self.score), True, WHITE)
         self.screen.blit(score_text, (10, 10))
         timer_text = self.font.render("Time: " + str(self.time_left), True, WHITE)
@@ -126,6 +140,7 @@ class Player:
         self.image = bee_image
         self.rect = self.image.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
         self.speed = 5
+        self.original_speed = self.speed
 
     def move(self, keys):
         if keys[pygame.K_LEFT] and self.rect.left > 0:
@@ -158,6 +173,7 @@ class Obstacle:
         self.rect = self.image.get_rect()  # Initialize rect here
         self.rect.topleft = (random.randint(0, SCREEN_WIDTH - self.rect.width), random.randint(0, SCREEN_HEIGHT - self.rect.height))
         self.speed = random.randint(1, 3)
+        self.original_speed = self.speed
 
     def move(self):
         self.rect.y += self.speed
@@ -166,6 +182,37 @@ class Obstacle:
 
     def draw(self, screen):
         screen.blit(self.image, self.rect.topleft)
+
+class PowerUp:
+    def __init__(self, power_up_type):
+        self.type = power_up_type
+        self.image = pygame.image.load(RESOURCE_PATH + f"{self.type}.png")
+        self.image = pygame.transform.scale(self.image, (30, 30))
+        self.rect = self.image.get_rect()
+        self.rect.topleft = (random.randint(0, SCREEN_WIDTH - self.rect.width), random.randint(0, SCREEN_HEIGHT - self.rect.height))
+        self.duration = 5000  # Duration of power-up effect in milliseconds
+        self.start_time = None
+
+    def move(self):
+        pass  # Power-ups don't move
+
+    def draw(self, screen):
+        screen.blit(self.image, self.rect.topleft)
+
+    def apply_effect(self, game):
+        self.start_time = pygame.time.get_ticks()
+        if self.type == "gust_of_wind":
+            game.player.speed *= 2
+            pygame.time.set_timer(pygame.USEREVENT + 1, self.duration)
+        elif self.type == "honey":
+            game.time_left += 5
+        elif self.type == "focus":
+            for obstacle in game.obstacles:
+                obstacle.speed /= 2
+            pygame.time.set_timer(pygame.USEREVENT + 2, self.duration)
+        elif self.type == "bounty":
+            game.score += 1  # Double the score for the next pollen collected
+            pygame.time.set_timer(pygame.USEREVENT + 3, self.duration)
 
 def local_run_redefine_resources_paths():
     global bee_image, pollen_image, raindrop_image, background_image
