@@ -163,9 +163,7 @@ def game_loop(screen, clock, all_sprites):
 
 
 def start_way_of_the_dragon():
-    """
-    Starts the game.
-    """
+    """Starts the game."""
     pygame.init()
     screen = init_screen()
     clock = pygame.time.Clock()

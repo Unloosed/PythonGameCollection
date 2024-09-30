@@ -254,7 +254,7 @@ class PowerUp:
             pygame.time.set_timer(pygame.USEREVENT + 3, self.duration)
 
 def start_pollen_collector():
-    """Consolidated game start function for use in main_GUI.py"""
+    """Consolidated game start function for use in main.py"""
     game = Game()
     game.run()
 

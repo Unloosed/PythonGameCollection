@@ -34,16 +34,15 @@ The link to this project's GitHub Pages documentation can be found [here](https:
 
 Run the main script to start the game menu:
 ```bash
-python main_GUI.py
+python main.py
 ```
 
 ## Project Structure
 
-- `main_GUI.py`: The main script that launches the game menu in an interactable **GUI**.
+- `main.py`: The main script that launches the game menu in an interactable **GUI**.
 - `games/`: Directory containing all game-specific files.
-    - Each `.py` file contains a unique game that gets loaded into `main_GUI.py`.
+    - Each `.py` file contains a unique game that gets loaded into `main.py`.
 - `requirements.txt`: Lists the dependencies required for the project.
-- `main_TEXT.py` (deprecated): The main script that launches the game menu in an interactable **text-based format**. This file is no longer maintained.
 
 ## Contributing
 
