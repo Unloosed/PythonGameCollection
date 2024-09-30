@@ -51,7 +51,7 @@ Contributions are welcome! Please fork the repository and submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE.txt](https://github.com/Unloosed/PythonGameCollection?tab=MIT-1-ov-file) file for details.
+This project is licensed under the MIT License. See the [LICENSE.txt](https://unloosed.github.io/PythonGameCollection/LICENSE.txt) file for details.
 
 ## Acknowledgements
 
