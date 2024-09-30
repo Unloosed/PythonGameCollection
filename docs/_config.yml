@@ -5,5 +5,5 @@ baseurl: "/PythonGameCollection"
 url: "https://unloosed.github.io"
 markdown: kramdown
 
-include:
-  - assets/css/dark-mode.css
+#include:
+#  - assets/css/dark-mode.css
