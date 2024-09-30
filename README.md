@@ -6,6 +6,7 @@ This project is a simple game menu built using Python's Tkinter library. It allo
 
 - **House Escape**: A thrilling escape game.
 - **Snake**: The classic snake game.
+- **Pollen Collector**: Play as a bee braving the storm to collect pollen for the hive!
 
 ## Installation
 
@@ -37,8 +38,7 @@ python main_GUI.py
 
 - `main_GUI.py`: The main script that launches the game menu in an interactable **GUI**.
 - `games/`: Directory containing all game-specific files.
-    - `house_escape.py`: Contains the logic for the House Escape game.
-    - `snake.py`: Contains the logic for the Snake game.
+    - Each `.py` file contains a unique game that gets loaded into `main_GUI.py`.
 - `requirements.txt`: Lists the dependencies required for the project.
 - `main_TEXT.py` (deprecated): The main script that launches the game menu in an interactable **text-based format**. This file is no longer maintained.
 
