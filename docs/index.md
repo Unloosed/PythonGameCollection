@@ -6,6 +6,6 @@ title: Project Documentation
 
 # Project Documentation
 
-- [README](README.md)
+- [README](README.html)
 - [TODO](TODO.md)
 - [MIT License](LICENSE.txt)
