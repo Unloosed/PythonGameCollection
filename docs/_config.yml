@@ -4,3 +4,4 @@ theme: jekyll-theme-minimal
 baseurl: "/PythonGameCollection"
 url: "https://unloosed.github.io"
 markdown: kramdown
+permalink: /:path/:basename.html
