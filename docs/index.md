@@ -1,5 +1,5 @@
 # Project Documentation
 
-- README
-- TODO
-- MIT License
+- [README](README.md)
+- [TODO](TODO.md)
+- [MIT License](LICENSE.txt)
