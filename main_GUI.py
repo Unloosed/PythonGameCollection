@@ -1,5 +1,7 @@
 import os
 import tkinter as tk
+from tkinter import ttk
+from tkinter import PhotoImage
 import importlib
 
 def start_game(game_func) -> None:
@@ -50,13 +52,20 @@ def main_menu():
 
     root = tk.Tk()
     root.title("Game Menu")
+    root.geometry("400x400")
+    root.configure(bg="#282c34")
 
-    tk.Label(root, text="Welcome to the Game Menu!", font=("Helvetica", 16)).pack(pady=10)
+    style = ttk.Style()
+    style.theme_use('clam')
+    style.configure('TButton', font=('Helvetica', 12), padding=10)
+    style.configure('TLabel', font=('Helvetica', 16), background="#282c34", foreground="#ffffff")
+
+    ttk.Label(root, text="Welcome to the Game Menu!").pack(pady=10)
 
     for game_name, game_func in games.items():
-        tk.Button(root, text=game_name, command=lambda func=game_func: start_game(func), width=20).pack(pady=5)
+        ttk.Button(root, text=game_name, command=lambda func=game_func: start_game(func), width=20).pack(pady=5)
 
-    tk.Button(root, text="Quit", command=root.quit, width=20).pack(pady=20)
+    ttk.Button(root, text="Quit", command=root.quit, width=20).pack(pady=20)
 
     root.mainloop()
 
