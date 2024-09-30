@@ -1,0 +1,6 @@
+title: Python Game Collection Documentation
+description: This is the documentation for my project.
+theme: jekyll-theme-minimal
+baseurl: "/PythonGameCollection"
+url: "https://unloosed.github.io"
+markdown: kramdown
