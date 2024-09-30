@@ -100,7 +100,7 @@ class Game:
 
     def spawn_power_up(self):
         """Spawn power-ups randomly."""
-        if random.randint(1, 100) <= 2:  # 2% chance to spawn a power-up each frame
+        if random.randint(1, 100) <= 1:  # 1% chance to spawn a power-up each frame
             power_up_type = random.choice(["gust_of_wind", "honey", "focus", "bounty"])
             self.power_ups.append(PowerUp(power_up_type))
 
