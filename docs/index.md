@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Project Documentation
 ---
 <link rel="stylesheet" type="text/css" href="assets/css/dark-mode.css">
