@@ -2,6 +2,9 @@
 
 This project is a simple game menu built using Python's Tkinter library. It allows users to select and start different games from a graphical interface.
 
+## GitHub Page
+The link to this project's GitHub Pages documentation can be found [here](https://unloosed.github.io/PythonGameCollection/)
+
 ## Features
 
 - **House Escape**: A thrilling escape game.
