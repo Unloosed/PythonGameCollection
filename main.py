@@ -52,18 +52,25 @@ def main_menu():
 
     root = tk.Tk()
     root.title("Game Menu")
-    root.geometry("400x400")
-    root.configure(bg="#282c34")
+    root.geometry("800x800")
+
+    # Set background image
+    background_image = PhotoImage(file="resources/gui/background.png")
+    background_label = tk.Label(root, image=background_image)
+    background_label.place(relwidth=1, relheight=1)
 
     style = ttk.Style()
     style.theme_use('clam')
     style.configure('TButton', font=('Helvetica', 12), padding=10)
-    style.configure('TLabel', font=('Helvetica', 16), background="#282c34", foreground="#ffffff")
+    style.configure('TLabel', font=('Helvetica', 16), background="#000000", foreground="#ffffff")
 
     ttk.Label(root, text="Welcome to the Game Menu!").pack(pady=10)
 
     for game_name, game_func in games.items():
-        ttk.Button(root, text=game_name, command=lambda func=game_func: start_game(func), width=20).pack(pady=5)
+        button = ttk.Button(root, text=game_name, command=lambda func=game_func: start_game(func), width=20)
+        button.pack(pady=5)
+        button.bind("<Enter>", lambda e, b=button: b.configure(style="Hover.TButton"))
+        button.bind("<Leave>", lambda e, b=button: b.configure(style="TButton"))
 
     ttk.Button(root, text="Quit", command=root.quit, width=20).pack(pady=20)
 
