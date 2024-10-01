@@ -52,7 +52,7 @@ def main_menu():
 
     root = tk.Tk()
     root.title("Game Menu")
-    root.geometry("800x800")
+    root.geometry("1000x800")
 
     # Set background image
     background_image = PhotoImage(file="resources/gui/background.png")
